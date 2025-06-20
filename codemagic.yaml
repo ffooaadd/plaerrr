@@ -5,7 +5,7 @@ workflows:
       vars:
         JAVA_VERSION: 11
       android_signing:
-        keystore_reference: my_keystore  # هذا اسم keystore بعد رفعه في موقع Codemagic
+        - keystore: my_keystore
     scripts:
       - name: Build APK
         script: |
