@@ -1,0 +1,7 @@
+
+<resources>
+    <string name="app_name">مسجل الشاشة الاحترافي</string>
+    <string name="start_recording">ابدأ التسجيل</string>
+    <string name="stop_recording">إيقاف التسجيل</string>
+    <string name="recording_saved">تم حفظ التسجيل بنجاح</string>
+</resources>

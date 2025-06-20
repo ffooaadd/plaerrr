@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.proscreenrecorder.app-merged_res-4:/values-ar_values-ar.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\moood\\app\\src\\main\\res\\values-ar\\strings.xml",
+                    "from": {
+                        "startLines": "2,5,3,4",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "17,190,76,133",
+                        "endColumns": "58,64,56,56",
+                        "endOffsets": "71,250,128,185"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,179,236",
+                        "endColumns": "58,64,56,56",
+                        "endOffsets": "109,174,231,288"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.example.proscreenrecorder.app-merged_res-4:/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\moood\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2,5,3,4",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "17,192,74,134",
+                        "endColumns": "56,72,59,57",
+                        "endOffsets": "69,260,129,187"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,112,185,245",
+                        "endColumns": "56,72,59,57",
+                        "endOffsets": "107,180,240,298"
+                    }
+                }
+            ]
+        }
+    ]
+}

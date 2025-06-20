@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.proscreenrecorder.app-mergeDebugResources-2:/values/values.xml",
+            "map": [
+                {
+                    "source": "C:\\moood\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2,5,3,4",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "17,192,74,134",
+                        "endColumns": "56,72,59,57",
+                        "endOffsets": "69,260,129,187"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,112,185,245",
+                        "endColumns": "56,72,59,57",
+                        "endOffsets": "107,180,240,298"
+                    }
+                }
+            ]
+        }
+    ]
+}
