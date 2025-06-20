@@ -1,0 +1,14 @@
+workflows:
+  android-workflow:
+    name: Build Android APK
+    environment:
+      vars:
+        JAVA_VERSION: 11
+      android_signing:
+        keystore_reference: my_keystore  # هذا اسم التوقيع اللي تحدده داخل Codemagic
+    scripts:
+      - name: Build APK
+        script: |
+          ./gradlew assembleRelease
+    artifacts:
+      - app/build/outputs/**/*.apk
