@@ -1,238 +1,82 @@
 }
 
-// drawable/gradient_light.xml
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <gradient
         android:angle="135"
         android:startColor="#667eea"
         android:centerColor="#764ba2"
         android:endColor="#f093fb"
         android:type="linear" />
-</shape>
 
-// drawable/gradient_dark.xml
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <gradient
         android:angle="135"
         android:startColor="#2C3E50"
         android:centerColor="#4A6741"
         android:endColor="#8E44AD"
         android:type="linear" />
-</shape>
 
-// drawable/circular_button_record.xml
-<?xml version="1.0" encoding="utf-8"?>
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="#40FFFFFF">
-    <item>
-        <shape android:shape="oval">
-            <gradient
                 android:angle="45"
                 android:startColor="#FF6B6B"
                 android:endColor="#FF8E8E"
                 android:type="linear" />
-            <stroke
                 android:width="3dp"
                 android:color="#FFFFFF" />
-        </shape>
-    </item>
-</ripple>
 
-// drawable/circular_button_stop.xml
-<?xml version="1.0" encoding="utf-8"?>
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="#40FFFFFF">
-    <item>
-        <shape android:shape="oval">
-            <gradient
                 android:angle="45"
                 android:startColor="#E53E3E"
                 android:endColor="#FC8181"
                 android:type="linear" />
-            <stroke
                 android:width="3dp"
                 android:color="#FFFFFF" />
-        </shape>
-    </item>
-</ripple>
 
-// drawable/circular_button_settings.xml
-<?xml version="1.0" encoding="utf-8"?>
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="#40FFFFFF">
-    <item>
-        <shape android:shape="oval">
-            <gradient
                 android:angle="45"
                 android:startColor="#805AD5"
                 android:endColor="#B794F6"
                 android:type="linear" />
-            <stroke
                 android:width="2dp"
                 android:color="#FFFFFF" />
-        </shape>
-    </item>
-</ripple>
 
-// drawable/circular_button_gallery.xml
-<?xml version="1.0" encoding="utf-8"?>
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="#40FFFFFF">
-    <item>
-        <shape android:shape="oval">
-            <gradient
                 android:angle="45"
                 android:startColor="#38B2AC"
                 android:endColor="#81E6D9"
                 android:type="linear" />
-            <stroke
                 android:width="2dp"
                 android:color="#FFFFFF" />
-        </shape>
-    </item>
-</ripple>
 
-// drawable/card_background.xml
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#FFFFFF" />
-    <corners android:radius="20dp" />
-    <stroke
         android:width="1dp"
         android:color="#E2E8F0" />
-</shape>
 
-// drawable/floating_background.xml
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#CC000000" />
-    <corners android:radius="25dp" />
-</shape>
 
-// drawable/button_primary.xml
-<?xml version="1.0" encoding="utf-8"?>
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="#40FFFFFF">
-    <item>
-        <shape>
-            <gradient
                 android:angle="45"
                 android:startColor="#667eea"
                 android:endColor="#764ba2"
                 android:type="linear" />
-            <corners android:radius="12dp" />
-        </shape>
-    </item>
-</ripple>
 
 // values/colors.xml
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="colorPrimary">#667eea</color>
-    <color name="colorPrimaryDark">#5a67d8</color>
-    <color name="colorAccent">#764ba2</color>
     
-    <color name="recording_red">#E53E3E</color>
-    <color name="ready_green">#68D391</color>
-    <color name="text_primary">#2D3748</color>
-    <color name="text_secondary">#4A5568</color>
-    <color name="background_light">#F7FAFC</color>
-    <color name="background_dark">#1A202C</color>
     
-    <color name="gradient_start">#667eea</color>
-    <color name="gradient_center">#764ba2</color>
-    <color name="gradient_end">#f093fb</color>
-</resources>
 
 // values/strings.xml
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">ProScreenRecorder</string>
-    <string name="record">تسجيل</string>
-    <string name="stop">إيقاف</string>
-    <string name="settings">إعدادات</string>
-    <string name="gallery">معرض</string>
-    <string name="ready_to_record">جاهز للتسجيل</string>
-    <string name="recording">جاري التسجيل...</string>
-    <string name="audio_recording">تسجيل الصوت</string>
-    <string name="front_camera">الكاميرا الأمامية</string>
-    <string name="dark_mode">الوضع الداكن</string>
-    <string name="video_quality">جودة الفيديو</string>
-    <string name="recording_finished">تم الانتهاء من التسجيل!</string>
-    <string name="play">تشغيل</string>
-    <string name="edit">تحرير</string>
-    <string name="share">مشاركة</string>
-    <string name="delete">حذف</string>
-    <string name="save">حفظ</string>
-    <string name="cancel">إلغاء</string>
-    <string name="watermark">علامة مائية</string>
-    <string name="auto_record">تسجيل تلقائي</string>
-    <string name="volume">مستوى الصوت</string>
-    <string name="settings_saved">تم حفظ الإعدادات</string>
-    <string name="permissions_required">يتطلب التطبيق جميع الصلاحيات للعمل بشكل صحيح</string>
-    <string name="video_deleted">تم حذف الفيديو</string>
-    <string name="share_video">مشاركة الفيديو</string>
-    <string name="recorded_with">تم تسجيله باستخدام ProScreenRecorder</string>
-</resources>
 
 // values/styles.xml
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/background_light</item>
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-    </style>
 
-    <style name="SwitchTheme" parent="Theme.AppCompat.Light">
-        <item name="colorControlActivated">@color/colorPrimary</item>
-        <item name="colorSwitchThumbNormal">@color/colorAccent</item>
-        <item name="android:colorForeground">@color/colorPrimary</item>
-    </style>
 
-    <style name="CircularButton">
-        <item name="android:layout_width">70dp</item>
-        <item name="android:layout_height">70dp</item>
-        <item name="android:layout_margin">8dp</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:elevation">6dp</item>
-        <item name="android:stateListAnimator">@null</item>
-    </style>
-</resources>
 
 // AndroidManifest.xml
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.proscreen.recorder">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
-    <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         android:requestLegacyExternalStorage="true">
 
-        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="// MainActivity.java
 package com.proscreen.recorder;
 
 import android.Manifest;
@@ -332,8 +176,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 // activity_main.xml
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_main"
     android:layout_width="match_parent"
@@ -342,14 +184,11 @@ public class MainActivity extends AppCompatActivity {
     android:background="@drawable/gradient_light"
     android:padding="24dp">
 
-    <!-- الشعار والعنوان -->
-    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="30dp">
 
-        <ImageView
             android:id="@+id/img_logo"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -357,7 +196,6 @@ public class MainActivity extends AppCompatActivity {
             android:src="@drawable/ic_logo"
             android:contentDescription="شعار التطبيق" />
 
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/img_logo"
@@ -369,10 +207,7 @@ public class MainActivity extends AppCompatActivity {
             android:textColor="#2D3748"
             android:fontFamily="@font/roboto_bold" />
 
-    </RelativeLayout>
 
-    <!-- منطقة العداد والحالة -->
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -381,7 +216,6 @@ public class MainActivity extends AppCompatActivity {
         android:layout_marginBottom="30dp"
         android:elevation="8dp">
 
-        <TextView
             android:id="@+id/tv_countdown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -392,7 +226,6 @@ public class MainActivity extends AppCompatActivity {
             android:visibility="gone"
             android:fontFamily="@font/roboto_bold" />
 
-        <TextView
             android:id="@+id/tv_timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -403,7 +236,6 @@ public class MainActivity extends AppCompatActivity {
             android:textColor="#4A5568"
             android:fontFamily="@font/roboto_mono" />
 
-        <TextView
             android:id="@+id/tv_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -414,10 +246,7 @@ public class MainActivity extends AppCompatActivity {
             android:textColor="#68D391"
             android:fontFamily="@font/roboto_medium" />
 
-    </LinearLayout>
 
-    <!-- أزرار التحكم الرئيسية -->
-    <LinearLayout
         android:id="@+id/layout_controls"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -425,7 +254,6 @@ public class MainActivity extends AppCompatActivity {
         android:gravity="center"
         android:layout_marginBottom="30dp">
 
-        <Button
             android:id="@+id/btn_gallery"
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -438,7 +266,6 @@ public class MainActivity extends AppCompatActivity {
             android:textColor="#FFFFFF"
             android:elevation="6dp" />
 
-        <Button
             android:id="@+id/btn_record"
             android:layout_width="90dp"
             android:layout_height="90dp"
@@ -452,7 +279,6 @@ public class MainActivity extends AppCompatActivity {
             android:textStyle="bold"
             android:elevation="8dp" />
 
-        <Button
             android:id="@+id/btn_stop"
             android:layout_width="90dp"
             android:layout_height="90dp"
@@ -467,7 +293,6 @@ public class MainActivity extends AppCompatActivity {
             android:elevation="8dp"
             android:visibility="gone" />
 
-        <Button
             android:id="@+id/btn_settings"
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -480,21 +305,15 @@ public class MainActivity extends AppCompatActivity {
             android:textColor="#FFFFFF"
             android:elevation="6dp" />
 
-    </LinearLayout>
 
-    <!-- إعدادات سريعة -->
-    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- بطاقة إعدادات الصوت والكاميرا -->
-            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -502,13 +321,11 @@ public class MainActivity extends AppCompatActivity {
                 app:cardElevation="6dp"
                 app:cardBackgroundColor="#FFFFFF">
 
-                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="20dp">
 
-                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="إعدادات التسجيل"
@@ -518,20 +335,17 @@ public class MainActivity extends AppCompatActivity {
                         android:layout_marginBottom="16dp"
                         android:fontFamily="@font/roboto_bold" />
 
-                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="12dp">
 
-                        <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/ic_mic"
                             android:layout_marginEnd="12dp" />
 
-                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -540,29 +354,24 @@ public class MainActivity extends AppCompatActivity {
                             android:textColor="#4A5568"
                             android:fontFamily="@font/roboto_medium" />
 
-                        <Switch
                             android:id="@+id/switch_audio"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
                             android:theme="@style/SwitchTheme" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="12dp">
 
-                        <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/ic_camera"
                             android:layout_marginEnd="12dp" />
 
-                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -571,27 +380,22 @@ public class MainActivity extends AppCompatActivity {
                             android:textColor="#4A5568"
                             android:fontFamily="@font/roboto_medium" />
 
-                        <Switch
                             android:id="@+id/switch_camera"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:theme="@style/SwitchTheme" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
 
-                        <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/ic_dark_mode"
                             android:layout_marginEnd="12dp" />
 
-                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -600,20 +404,14 @@ public class MainActivity extends AppCompatActivity {
                             android:textColor="#4A5568"
                             android:fontFamily="@font/roboto_medium" />
 
-                        <Switch
                             android:id="@+id/switch_dark_mode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:theme="@style/SwitchTheme" />
 
-                    </LinearLayout>
 
-                </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
 
-            <!-- بطاقة جودة الفيديو -->
-            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -621,26 +419,22 @@ public class MainActivity extends AppCompatActivity {
                 app:cardElevation="6dp"
                 app:cardBackgroundColor="#FFFFFF">
 
-                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="20dp">
 
-                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="12dp">
 
-                        <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/ic_quality"
                             android:layout_marginEnd="12dp" />
 
-                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -649,7 +443,6 @@ public class MainActivity extends AppCompatActivity {
                             android:textColor="#4A5568"
                             android:fontFamily="@font/roboto_medium" />
 
-                        <TextView
                             android:id="@+id/tv_quality"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -659,9 +452,7 @@ public class MainActivity extends AppCompatActivity {
                             android:textColor="#805AD5"
                             android:fontFamily="@font/roboto_bold" />
 
-                    </LinearLayout>
 
-                    <SeekBar
                         android:id="@+id/seekbar_quality"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -670,13 +461,11 @@ public class MainActivity extends AppCompatActivity {
                         android:progressTint="#805AD5"
                         android:thumbTint="#805AD5" />
 
-                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_marginTop="8dp">
 
-                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -685,7 +474,6 @@ public class MainActivity extends AppCompatActivity {
                             android:textColor="#A0AEC0"
                             android:gravity="start" />
 
-                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -694,7 +482,6 @@ public class MainActivity extends AppCompatActivity {
                             android:textColor="#A0AEC0"
                             android:gravity="center" />
 
-                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -703,21 +490,13 @@ public class MainActivity extends AppCompatActivity {
                             android:textColor="#A0AEC0"
                             android:gravity="end" />
 
-                    </LinearLayout>
 
-                </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
 
-    </ScrollView>
 
-</LinearLayout>
 
 // floating_controls.xml
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -725,7 +504,6 @@ public class MainActivity extends AppCompatActivity {
     android:padding="8dp"
     android:elevation="12dp">
 
-    <Button
         android:id="@+id/btn_floating_stop"
         android:layout_width="48dp"
         android:layout_height="48dp"
@@ -734,7 +512,6 @@ public class MainActivity extends AppCompatActivity {
         android:drawableTop="@drawable/ic_stop_white"
         android:padding="8dp" />
 
-    <Button
         android:id="@+id/btn_floating_hide"
         android:layout_width="48dp"
         android:layout_height="48dp"
@@ -743,18 +520,14 @@ public class MainActivity extends AppCompatActivity {
         android:drawableTop="@drawable/ic_visibility_off"
         android:padding="8dp" />
 
-</LinearLayout>
 
 // dialog_preview.xml
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="24dp"
     android:background="@drawable/dialog_background">
 
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="تم الانتهاء من التسجيل!"
@@ -765,13 +538,11 @@ public class MainActivity extends AppCompatActivity {
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/roboto_bold" />
 
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center">
 
-        <Button
             android:id="@+id/btn_play"
             android:layout_width="0dp"
             android:layout_height="48dp"
@@ -784,7 +555,6 @@ public class MainActivity extends AppCompatActivity {
             android:drawablePadding="8dp"
             android:fontFamily="@font/roboto_medium" />
 
-        <Button
             android:id="@+id/btn_edit"
             android:layout_width="0dp"
             android:layout_height="48dp"
@@ -797,16 +567,13 @@ public class MainActivity extends AppCompatActivity {
             android:drawablePadding="8dp"
             android:fontFamily="@font/roboto_medium" />
 
-    </LinearLayout>
 
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginTop="8dp">
 
-        <Button
             android:id="@+id/btn_share"
             android:layout_width="0dp"
             android:layout_height="48dp"
@@ -819,7 +586,6 @@ public class MainActivity extends AppCompatActivity {
             android:drawablePadding="8dp"
             android:fontFamily="@font/roboto_medium" />
 
-        <Button
             android:id="@+id/btn_delete"
             android:layout_width="0dp"
             android:layout_height="48dp"
@@ -832,9 +598,7 @@ public class MainActivity extends AppCompatActivity {
             android:drawablePadding="8dp"
             android:fontFamily="@font/roboto_medium" />
 
-    </LinearLayout>
 
-</LinearLayout>
 
 // GalleryActivity.java
 package com.proscreen.recorder;
