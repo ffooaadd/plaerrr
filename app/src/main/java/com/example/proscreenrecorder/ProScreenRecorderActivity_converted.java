@@ -1,82 +1,25 @@
 }
 
-        android:angle="135"
-        android:startColor="#667eea"
-        android:centerColor="#764ba2"
-        android:endColor="#f093fb"
-        android:type="linear" />
-
-        android:angle="135"
-        android:startColor="#2C3E50"
-        android:centerColor="#4A6741"
-        android:endColor="#8E44AD"
-        android:type="linear" />
-
-    android:color="#40FFFFFF">
-                android:angle="45"
-                android:startColor="#FF6B6B"
-                android:endColor="#FF8E8E"
-                android:type="linear" />
-                android:width="3dp"
-                android:color="#FFFFFF" />
-
-    android:color="#40FFFFFF">
-                android:angle="45"
-                android:startColor="#E53E3E"
-                android:endColor="#FC8181"
-                android:type="linear" />
-                android:width="3dp"
-                android:color="#FFFFFF" />
-
-    android:color="#40FFFFFF">
-                android:angle="45"
-                android:startColor="#805AD5"
-                android:endColor="#B794F6"
-                android:type="linear" />
-                android:width="2dp"
-                android:color="#FFFFFF" />
-
-    android:color="#40FFFFFF">
-                android:angle="45"
-                android:startColor="#38B2AC"
-                android:endColor="#81E6D9"
-                android:type="linear" />
-                android:width="2dp"
-                android:color="#FFFFFF" />
-
-        android:width="1dp"
-        android:color="#E2E8F0" />
 
 
-    android:color="#40FFFFFF">
-                android:angle="45"
-                android:startColor="#667eea"
-                android:endColor="#764ba2"
-                android:type="linear" />
 
-// values/colors.xml
+
+
+
+
+
+
     
     
 
-// values/strings.xml
-
-// values/styles.xml
 
 
 
-// AndroidManifest.xml
+
     package="com.proscreen.recorder">
 
 
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:requestLegacyExternalStorage="true">
 
-            android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop">
 package com.proscreen.recorder;
 
 import android.Manifest;
@@ -131,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 1000;
     private static final int REQUEST_PERMISSIONS = 1001;
     
-    // UI Components
     private Button btnRecord, btnStop, btnSettings, btnGallery;
     private TextView tvTimer, tvStatus, tvCountdown;
     private Switch switchAudio, switchCamera, switchDarkMode;
@@ -140,13 +82,11 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout layoutMain, layoutControls;
     private RelativeLayout layoutFloating;
     
-    // Recording Components
     private MediaProjectionManager mediaProjectionManager;
     private MediaProjection mediaProjection;
     private VirtualDisplay virtualDisplay;
     private MediaRecorder mediaRecorder;
     
-    // Recording Properties
     private int screenWidth, screenHeight, screenDensity;
     private boolean isRecording = false;
     private boolean isAudioEnabled = true;
@@ -155,19 +95,15 @@ public class MainActivity extends AppCompatActivity {
     private String outputPath;
     private long recordingStartTime;
     
-    // Floating Window
     private WindowManager windowManager;
     private View floatingView;
     private boolean isFloatingVisible = false;
     
-    // Timer
     private Handler timerHandler = new Handler();
     private Runnable timerRunnable;
     
-    // Countdown
     private CountDownTimer countDownTimer;
     
-    // Permissions
     private String[] permissions = {
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.RECORD_AUDIO,
@@ -175,320 +111,52 @@ public class MainActivity extends AppCompatActivity {
         Manifest.permission.SYSTEM_ALERT_WINDOW
     }
 
-// activity_main.xml
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layout_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/gradient_light"
-    android:padding="24dp">
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="30dp">
-
-            android:id="@+id/img_logo"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_logo"
-            android:contentDescription="شعار التطبيق" />
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/img_logo"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="12dp"
-            android:text="ProScreenRecorder"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#2D3748"
-            android:fontFamily="@font/roboto_bold" />
 
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/card_background"
-        android:padding="20dp"
-        android:layout_marginBottom="30dp"
-        android:elevation="8dp">
-
-            android:id="@+id/tv_countdown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="48sp"
-            android:textStyle="bold"
-            android:textColor="#E53E3E"
-            android:visibility="gone"
-            android:fontFamily="@font/roboto_bold" />
-
-            android:id="@+id/tv_timer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="00:00:00"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:textColor="#4A5568"
-            android:fontFamily="@font/roboto_mono" />
-
-            android:id="@+id/tv_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:text="جاهز للتسجيل"
-            android:textSize="16sp"
-            android:textColor="#68D391"
-            android:fontFamily="@font/roboto_medium" />
 
 
-        android:id="@+id/layout_controls"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="30dp">
-
-            android:id="@+id/btn_gallery"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="8dp"
-            android:background="@drawable/circular_button_gallery"
-            android:drawableTop="@drawable/ic_gallery"
-            android:drawablePadding="4dp"
-            android:text="معرض"
-            android:textSize="10sp"
-            android:textColor="#FFFFFF"
-            android:elevation="6dp" />
-
-            android:id="@+id/btn_record"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_margin="12dp"
-            android:background="@drawable/circular_button_record"
-            android:drawableTop="@drawable/ic_record"
-            android:drawablePadding="6dp"
-            android:text="تسجيل"
-            android:textSize="12sp"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:elevation="8dp" />
-
-            android:id="@+id/btn_stop"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_margin="12dp"
-            android:background="@drawable/circular_button_stop"
-            android:drawableTop="@drawable/ic_stop"
-            android:drawablePadding="6dp"
-            android:text="إيقاف"
-            android:textSize="12sp"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:elevation="8dp"
-            android:visibility="gone" />
-
-            android:id="@+id/btn_settings"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="8dp"
-            android:background="@drawable/circular_button_settings"
-            android:drawableTop="@drawable/ic_settings"
-            android:drawablePadding="4dp"
-            android:text="إعدادات"
-            android:textSize="10sp"
-            android:textColor="#FFFFFF"
-            android:elevation="6dp" />
 
 
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+
+
+
+
+
+
+
+
+
+
                 app:cardCornerRadius="16dp"
                 app:cardElevation="6dp"
                 app:cardBackgroundColor="#FFFFFF">
 
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="إعدادات التسجيل"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="#2D3748"
-                        android:layout_marginBottom="16dp"
-                        android:fontFamily="@font/roboto_bold" />
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="12dp">
-
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_mic"
-                            android:layout_marginEnd="12dp" />
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="تسجيل الصوت"
-                            android:textSize="16sp"
-                            android:textColor="#4A5568"
-                            android:fontFamily="@font/roboto_medium" />
-
-                            android:id="@+id/switch_audio"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checked="true"
-                            android:theme="@style/SwitchTheme" />
-
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="12dp">
-
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_camera"
-                            android:layout_marginEnd="12dp" />
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="الكاميرا الأمامية"
-                            android:textSize="16sp"
-                            android:textColor="#4A5568"
-                            android:fontFamily="@font/roboto_medium" />
-
-                            android:id="@+id/switch_camera"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:theme="@style/SwitchTheme" />
-
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_dark_mode"
-                            android:layout_marginEnd="12dp" />
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="الوضع الداكن"
-                            android:textSize="16sp"
-                            android:textColor="#4A5568"
-                            android:fontFamily="@font/roboto_medium" />
-
-                            android:id="@+id/switch_dark_mode"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:theme="@style/SwitchTheme" />
 
 
 
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 app:cardCornerRadius="16dp"
                 app:cardElevation="6dp"
                 app:cardBackgroundColor="#FFFFFF">
 
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="12dp">
-
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_quality"
-                            android:layout_marginEnd="12dp" />
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="جودة الفيديو"
-                            android:textSize="16sp"
-                            android:textColor="#4A5568"
-                            android:fontFamily="@font/roboto_medium" />
-
-                            android:id="@+id/tv_quality"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1080p"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#805AD5"
-                            android:fontFamily="@font/roboto_bold" />
-
-
-                        android:id="@+id/seekbar_quality"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:max="2"
-                        android:progress="1"
-                        android:progressTint="#805AD5"
-                        android:thumbTint="#805AD5" />
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="8dp">
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="720p"
-                            android:textSize="12sp"
-                            android:textColor="#A0AEC0"
-                            android:gravity="start" />
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="1080p"
-                            android:textSize="12sp"
-                            android:textColor="#A0AEC0"
-                            android:gravity="center" />
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="4K"
-                            android:textSize="12sp"
-                            android:textColor="#A0AEC0"
-                            android:gravity="end" />
 
 
 
@@ -496,111 +164,31 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-// floating_controls.xml
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="@drawable/floating_background"
-    android:padding="8dp"
-    android:elevation="12dp">
-
-        android:id="@+id/btn_floating_stop"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/floating_button_stop"
-        android:drawableTop="@drawable/ic_stop_white"
-        android:padding="8dp" />
-
-        android:id="@+id/btn_floating_hide"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/floating_button_hide"
-        android:drawableTop="@drawable/ic_visibility_off"
-        android:padding="8dp" />
-
-
-// dialog_preview.xml
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="@drawable/dialog_background">
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="تم الانتهاء من التسجيل!"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#2D3748"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/roboto_bold" />
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-            android:id="@+id/btn_play"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:layout_margin="4dp"
-            android:background="@drawable/button_primary"
-            android:drawableStart="@drawable/ic_play"
-            android:text="تشغيل"
-            android:textColor="#FFFFFF"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/roboto_medium" />
-
-            android:id="@+id/btn_edit"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:layout_margin="4dp"
-            android:background="@drawable/button_secondary"
-            android:drawableStart="@drawable/ic_edit"
-            android:text="تحرير"
-            android:textColor="#FFFFFF"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/roboto_medium" />
-
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="8dp">
-
-            android:id="@+id/btn_share"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:layout_margin="4dp"
-            android:background="@drawable/button_success"
-            android:drawableStart="@drawable/ic_share"
-            android:text="مشاركة"
-            android:textColor="#FFFFFF"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/roboto_medium" />
-
-            android:id="@+id/btn_delete"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:layout_margin="4dp"
-            android:background="@drawable/button_danger"
-            android:drawableStart="@drawable/ic_delete"
-            android:text="حذف"
-            android:textColor="#FFFFFF"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/roboto_medium" />
 
 
 
-// GalleryActivity.java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 package com.proscreen.recorder;
 
 import android.content.Intent;
@@ -654,7 +242,6 @@ public class GalleryActivity extends AppCompatActivity {
     }
 }
 
-// VideoEditorActivity.java
 package com.proscreen.recorder;
 
 import android.content.Intent;
@@ -705,15 +292,12 @@ public class VideoEditorActivity extends AppCompatActivity {
     }
 
     private void trimVideo() {
-        // تنفيذ قص الفيديو
     }
 
     private void applyFilter() {
-        // تطبيق الفلاتر
     }
 
     private void saveEditedVideo() {
-        // حفظ الفيديو المحرر
     }
 };
 
@@ -747,19 +331,14 @@ public class VideoEditorActivity extends AppCompatActivity {
     }
 
     private void setupUI() {
-        // إعداد الألوان والتدرجات
         applyGradientBackground();
         
-        // إعداد الأزرار الدائرية
         setupCircularButtons();
         
-        // إعداد المؤثرات البصرية
         setupAnimations();
         
-        // إعداد الأحداث
         setupClickListeners();
         
-        // إعداد الحالة الأولية
         updateUI();
     }
 
@@ -772,7 +351,6 @@ public class VideoEditorActivity extends AppCompatActivity {
     }
 
     private void setupCircularButtons() {
-        // تطبيق الشكل الدائري والخلفية الشفافة
         btnRecord.setBackgroundResource(R.drawable.circular_button_record);
         btnStop.setBackgroundResource(R.drawable.circular_button_stop);
         btnSettings.setBackgroundResource(R.drawable.circular_button_settings);
@@ -780,7 +358,6 @@ public class VideoEditorActivity extends AppCompatActivity {
     }
 
     private void setupAnimations() {
-        // تطبيق الرسوم المتحركة البسيطة
         imgLogo.setAlpha(0f);
         imgLogo.animate().alpha(1f).setDuration(1000).start();
         
@@ -838,7 +415,6 @@ public class VideoEditorActivity extends AppCompatActivity {
         screenHeight = displayMetrics.heightPixels;
         screenDensity = displayMetrics.densityDpi;
         
-        // إنشاء مجلد التطبيق
         File appDir = new File(Environment.getExternalStorageDirectory(), "ProScreenRecorder");
         if (!appDir.exists()) {
             appDir.mkdirs();
@@ -866,7 +442,6 @@ public class VideoEditorActivity extends AppCompatActivity {
             return;
         }
         
-        // إظهار العد التنازلي
         tvCountdown.setVisibility(View.VISIBLE);
         tvCountdown.setTextSize(48);
         
@@ -876,9 +451,7 @@ public class VideoEditorActivity extends AppCompatActivity {
                 long seconds = millisUntilFinished / 1000;
                 if (seconds > 0) {
                     tvCountdown.setText(String.valueOf(seconds));
-                    // تأثير صوتي
                     playSound(R.raw.countdown_tick);
-                    // تأثير بصري
                     animateCountdown();
                 }
             }
@@ -923,7 +496,6 @@ public class VideoEditorActivity extends AppCompatActivity {
         try {
             mediaRecorder = new MediaRecorder();
             
-            // إعداد مصدر الصوت
             if (isAudioEnabled) {
                 mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             }
@@ -931,7 +503,6 @@ public class VideoEditorActivity extends AppCompatActivity {
             mediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
             mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
             
-            // إعداد جودة الفيديو
             int quality = seekBarQuality.getProgress();
             setVideoQuality(quality);
             
@@ -941,7 +512,6 @@ public class VideoEditorActivity extends AppCompatActivity {
             
             mediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
             
-            // إعداد مسار الحفظ
             String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
             outputPath = Environment.getExternalStorageDirectory() + "/ProScreenRecorder/recording_" + timestamp + ".mp4";
             mediaRecorder.setOutputFile(outputPath);
@@ -986,7 +556,6 @@ public class VideoEditorActivity extends AppCompatActivity {
         startTimer();
         createFloatingButton();
         
-        // إظهار الكاميرا الأمامية إذا كانت مفعلة
         if (isCameraEnabled) {
             showCameraOverlay();
         }
@@ -1016,7 +585,6 @@ public class VideoEditorActivity extends AppCompatActivity {
             playSound(R.raw.recording_stop);
             updateUI();
             
-            // إظهار حوار المعاينة
             showPreviewDialog();
             
         } catch (Exception e) {
@@ -1080,7 +648,6 @@ public class VideoEditorActivity extends AppCompatActivity {
         windowManager.addView(floatingView, params);
         isFloatingVisible = true;
         
-        // إعداد أحداث الزر الطافي
         setupFloatingButtonEvents(params);
     }
 
@@ -1094,7 +661,6 @@ public class VideoEditorActivity extends AppCompatActivity {
             new Handler().postDelayed(() -> floatingView.setVisibility(View.VISIBLE), 3000);
         });
         
-        // إمكانية سحب الزر الطافي
         floatingView.setOnTouchListener(new View.OnTouchListener() {
             private int initialX, initialY;
             private float initialTouchX, initialTouchY;
@@ -1128,12 +694,9 @@ public class VideoEditorActivity extends AppCompatActivity {
     }
 
     private void showCameraOverlay() {
-        // إنشاء نافذة الكاميرا الأمامية
-        // هذا يتطلب تنفيذ إضافي لإنشاء CameraPreview
     }
 
     private void hideCameraOverlay() {
-        // إخفاء نافذة الكاميرا الأمامية
     }
 
     private void showPreviewDialog() {
@@ -1176,12 +739,10 @@ public class VideoEditorActivity extends AppCompatActivity {
         View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_settings, null);
         builder.setView(dialogView);
         
-        // إعداد عناصر حوار الإعدادات
         Switch switchWatermark = dialogView.findViewById(R.id.switch_watermark);
         Switch switchAutoRecord = dialogView.findViewById(R.id.switch_auto_record);
         SeekBar seekBarVolume = dialogView.findViewById(R.id.seekbar_volume);
         
-        // تحميل الإعدادات الحالية
         SharedPreferences prefs = getSharedPreferences("AppSettings", MODE_PRIVATE);
         switchWatermark.setChecked(prefs.getBoolean("watermark", false));
         switchAutoRecord.setChecked(prefs.getBoolean("auto_record", false));
@@ -1191,7 +752,6 @@ public class VideoEditorActivity extends AppCompatActivity {
         
         Button btnSave = dialogView.findViewById(R.id.btn_save_settings);
         btnSave.setOnClickListener(v -> {
-            // حفظ الإعدادات
             SharedPreferences.Editor editor = prefs.edit();
             editor.putBoolean("watermark", switchWatermark.isChecked());
             editor.putBoolean("auto_record", switchAutoRecord.isChecked());
@@ -1274,7 +834,6 @@ public class VideoEditorActivity extends AppCompatActivity {
     }
 
     private void playSound(int soundResource) {
-        // تشغيل الصوت باستخدام MediaPlayer
         android.media.MediaPlayer mediaPlayer = android.media.MediaPlayer.create(this, soundResource);
         mediaPlayer.start();
         mediaPlayer.setOnCompletionListener(android.media.MediaPlayer::release);
