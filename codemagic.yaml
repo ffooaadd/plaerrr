@@ -1,14 +1,12 @@
 workflows:
   android-workflow:
-    name: Build Android APK
+    name: Build Debug APK
     environment:
       vars:
         JAVA_VERSION: 11
-      android_signing:
-        - keystore: my_keystore
     scripts:
-      - name: Build APK
+      - name: Build debug APK
         script: |
-          ./gradlew assembleRelease
+          ./gradlew assembleDebug
     artifacts:
       - app/build/outputs/**/*.apk
